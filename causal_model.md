@@ -4,13 +4,11 @@ graph TD
     B["Business Capacity"]
     C["External sources - This is new change"]
     D["Transaction per User 100 First 30D"]
-    E["Testing new variable"]
 
     B ==>|Strong +ve| A
     A ==>|Strong +ve| D
     B --> D
     C --> D
-    E --> D
 
     classDef strongRelation stroke:#ff3,stroke-width:4px;
     class A,B,D strongRelation;

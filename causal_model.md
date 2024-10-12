@@ -2,7 +2,7 @@
 graph TD
     A["Early Adoption (10 Transaction in First 7D)"]
     B["Business Capacity"]
-    C["External sources - This is new changes"]
+    C["External sources - This is new change"]
     D["Transaction per User 100 First 30D"]
     E["Testing new variable"]
 

@@ -21,18 +21,22 @@ jobs:
           npm init -y
           npm install @mermaid-js/mermaid-cli@9.1.7 puppeteer@13.5.0
 
+      - name: Remove existing image
+        run: |
+          rm -f causal_model.png
+
       - name: Generate image from Mermaid diagram
         run: |
           npx mmdc -i causal_model.md -o causal_model.png
 
       - name: Rename generated file
         run: |
-          mv causal_model-1.png causal_model.png
+          mv causal_model-1.png causal_model.png || true
 
-      - name: Commit and push if changed
+      - name: Commit and push changes
         run: |
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
-          git add causal_model.png
-          git commit -m "Update causal_model.png" || exit 0
+          git add -f causal_model.png
+          git commit -m "Update causal_model.png" || echo "No changes to commit"
           git push

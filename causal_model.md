@@ -1,4 +1,4 @@
-```mermaid```
+```mermaid
 graph TD
     A["Early Adoption (10 Transaction in First 7D)"]
     B["Business Capacity"]
@@ -12,3 +12,4 @@ graph TD
 
     classDef strongRelation stroke:#ff3,stroke-width:4px;
     class A,B,D strongRelation;
+```

@@ -1,0 +1,22 @@
+name: Generate Mermaid Diagram Image
+on:
+  push:
+    paths:
+      - 'causal_model.md'
+jobs:
+  generate-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Generate image from Mermaid diagram
+        uses: neenjaw/compile-mermaid-markdown-action@0.3.1
+        with:
+          files: causal_model.md
+          output: causal_model.png
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add causal_model.png
+          git commit -m "Update causal_model.png" || exit 0
+          git push

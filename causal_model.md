@@ -4,7 +4,7 @@ graph TD
     C["External sources"]
     D["Transaction per User 100 First 30D"]
 
-    B ==>|Strong -ve| A
+    B ==>|Strongg -ve| A
     A ==>|Strong +ve| D
     B --> D
     C --> D

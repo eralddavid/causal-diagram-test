@@ -17,7 +17,9 @@ jobs:
           node-version: '14'
 
       - name: Install dependencies
-        run: npm install @mermaid-js/mermaid-cli
+        run: |
+          npm init -y
+          npm install @mermaid-js/mermaid-cli puppeteer
 
       - name: Generate image from Mermaid diagram
         run: |
